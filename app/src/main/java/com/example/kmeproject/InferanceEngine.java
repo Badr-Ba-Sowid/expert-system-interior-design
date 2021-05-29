@@ -3,7 +3,7 @@ package com.example.kmeproject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class inferanceEngine {
+public class InferanceEngine {
     private final static String CLASSIC = "CLASSIC";
 
 

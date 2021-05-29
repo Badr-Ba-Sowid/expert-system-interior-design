@@ -19,6 +19,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Question1"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".Question2"
+            android:parentActivityName=".Question1"/>
+        <activity android:name=".Question3"
+            android:parentActivityName=".Question2"/>
+        <activity android:name=".Question4"
+            android:parentActivityName=".Question3"/>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

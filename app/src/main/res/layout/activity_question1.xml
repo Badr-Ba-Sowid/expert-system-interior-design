@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/question1_root_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/question_1_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Which lines do you prefer?"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_rectangle_pink_alpha_7"
+        android:padding="20dp"
+        android:textStyle="bold"
+        android:elevation="3dp"
+
+        />
+        <LinearLayout
+            android:id="@+id/first_row_q1"
+            android:layout_below="@id/question_1_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+        <androidx.cardview.widget.CardView
+            android:layout_height="300dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="5dp"
+            android:layout_margin="5dp"
+            >
+            <CheckBox
+                android:id="@+id/straight_lines_check_box"
+
+                android:background="@drawable/straight_lines"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+
+                android:textAllCaps="false"
+                android:padding="40dp"
+                android:buttonTint="@color/pink"
+                android:gravity="start"
+                android:shadowRadius="30"
+                android:scaleType="fitXY"
+                android:maxHeight="200dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_height="300dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+
+            app:cardCornerRadius="5dp"
+            android:layout_margin="5dp"
+            >
+            <CheckBox
+                android:id="@+id/curved_lines_check_box"
+                android:background="@drawable/curved_lines"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+
+                android:padding="40dp"
+                android:gravity="start"
+                android:shadowRadius="30"
+                android:scaleType="fitXY"
+                android:maxHeight="200dp"
+                android:buttonTint="@color/pink"
+
+                android:foreground="?android:attr/selectableItemBackground"
+                />
+
+        </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/second_row_q1"
+        android:layout_below="@id/first_row_q1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <androidx.cardview.widget.CardView
+            android:layout_height="300dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="5dp"
+            android:layout_margin="5dp"
+            >
+            <CheckBox
+                android:id="@+id/curved_with_straight_lines_check_box"
+                android:background="@drawable/curved_with_straight"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:padding="40dp"
+                android:gravity="start"
+                android:shadowRadius="30"
+                android:scaleType="fitXY"
+                android:maxHeight="200dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:buttonTint="@color/pink"
+
+                />
+
+        </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
+    <Button
+        android:id="@+id/next_button_question1"
+        android:layout_below="@id/second_row_q1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:layout_margin="20dp"
+        android:background="@drawable/round_rectangle_pink"
+        />
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

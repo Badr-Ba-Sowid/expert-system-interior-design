@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/question3_root_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/question_3_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Which colors do you prefer?"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_rectangle_pink_alpha_7"
+        android:padding="20dp"
+        android:textStyle="bold"
+        android:elevation="3dp"
+        />
+
+    <GridLayout
+        android:id="@+id/question_1_grid_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/question_3_text_view"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:layout_marginTop="20dp"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_height="200dp"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="left|fill"
+            android:layout_column="0"
+            android:layout_row="0"
+            app:cardCornerRadius="5dp"
+            android:layout_margin="5dp"
+            >
+            <CheckBox
+                android:id="@+id/vibrant_check_box"
+                android:background="@drawable/vibrant"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:gravity="start"
+                android:buttonTint="@color/pink"
+                android:textAllCaps="false"
+                android:padding="20dp"
+                android:shadowRadius="30"
+                android:scaleType="fitXY"
+                android:maxHeight="200dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+
+            android:layout_height="200dp"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_gravity="right|fill"
+            android:layout_column="1"
+            android:layout_row="0"
+            app:cardCornerRadius="5dp"
+            android:layout_margin="5dp"
+            >
+            <CheckBox
+                android:id="@+id/mid_tone_check_box"
+                android:background="@drawable/midtone"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:gravity="start"
+                android:buttonTint="@color/pink"
+                android:padding="20dp"
+                android:shadowRadius="30"
+                android:scaleType="fitXY"
+                android:maxHeight="200dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_height="200dp"
+            android:layout_width="0dp"
+            android:layout_rowWeight="1"
+            android:layout_gravity="center_horizontal|fill"
+            app:cardCornerRadius="5dp"
+            android:layout_margin="5dp"
+            >
+            <CheckBox
+                android:id="@+id/dark_check_box"
+                android:background="@drawable/darke"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:gravity="start"
+                android:buttonTint="@color/pink"
+                android:padding="20dp"
+                android:shadowRadius="30"
+                android:scaleType="fitXY"
+                android:maxHeight="200dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_height="200dp"
+            android:layout_width="0dp"
+            android:layout_rowWeight="1"
+            android:layout_gravity="center_horizontal|fill"
+            app:cardCornerRadius="5dp"
+            android:layout_margin="5dp"
+            >
+            <CheckBox
+                android:id="@+id/light_check_box"
+                android:background="@drawable/light"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:textAllCaps="false"
+                android:padding="20dp"
+                android:gravity="start"
+                android:buttonTint="@color/pink"
+                android:shadowRadius="30"
+                android:scaleType="fitXY"
+                android:maxHeight="200dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/next_button_question3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:layout_margin="20dp"
+        android:background="@drawable/round_rectangle_pink"
+        android:layout_alignParentBottom="true"
+        />
+
+
+
+
+
+</RelativeLayout>
