@@ -6,7 +6,6 @@ import java.util.Map;
 
 public class InferanceEngine {
 
-    private final static String CLASSIC = "CLASSIC";
 
     public static String getCategory(ArrayList<String> lines, ArrayList<String> elementsOfDesign, ArrayList<String> colors, ArrayList<String> budget) {
 
@@ -21,7 +20,7 @@ public class InferanceEngine {
        	   return Constants.MINIMALIST;
        }else if ((colors.contains(Constants.MID_TONE) || colors.contains(Constants.DARK) )
                && budget.contains(Constants.HIGH) &&( elementsOfDesign.contains(Constants.DETAILED) || lines.contains(Constants.CURVED_LINES))) {
-       	  return CLASSIC;
+       	  return Constants.CLASSIC;
        }else if (elementsOfDesign.contains(Constants.SIMPLE) && budget.contains(Constants.AVERAGE)){
        	  return Constants.MODERNIST;
        }else if (elementsOfDesign.contains(Constants.DETAILED)|| elementsOfDesign.contains(Constants.MID_RANGE) && lines.contains(Constants.CURVED_WITH_STRAIGHT)  ){
