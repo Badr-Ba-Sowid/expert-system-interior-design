@@ -26,4 +26,15 @@ public class Constants {
     public static final String AVERAGE = "AVERAGE";
     public static final String LOW = "LOW";
 
+    // Styles
+    public static final String MODERN_MINIMALIST = "MODERN_MINIMALIST";
+    public static final String MINIMALIST = "MINIMALIST";
+    public static final String MODERNIST = "MODERNIST";
+    public static final String CLASSIC_MODERN = "CLASSIC_MODERN";
+    public static final String CLASSIC  = "CLASSIC";
+
+
+
+
+
 }

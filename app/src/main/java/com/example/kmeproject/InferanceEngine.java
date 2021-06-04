@@ -1,27 +1,42 @@
 package com.example.kmeproject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class InferanceEngine {
+
     private final static String CLASSIC = "CLASSIC";
 
+    public static String getCategory(ArrayList<String> lines, ArrayList<String> elementsOfDesign, ArrayList<String> colors, ArrayList<String> budget) {
 
-    // this method is going to be called from the ui
-    // to make inferances , the output should be
-    // a single string of one of the categories
+       if(lines.contains(Constants.STRAIGHT_LINES) &&
+               elementsOfDesign.contains(Constants.SIMPLE)
+               && budget.contains(Constants.AVERAGE) ||
+               budget.contains(Constants.LOW) ||
+               budget.contains(Constants.HIGH)) {
+           return Constants.MODERN_MINIMALIST;
 
-//
-//    private String infer(){
-//        HashMap<String , boolean> input = new HashMap();
-//        input.put(CLASSIC , false );
-//
-//        if(input.get(SIMPLE_ELEMENTS) && input.get(AVERAGE) ) {
-//            return MODERN;
-//        }else{
-//
-//        }
-//    }
+       }else if (budget.contains(Constants.LOW) && elementsOfDesign.contains(Constants.SUPER_SIMPLE)) {
+       	   return Constants.MINIMALIST;
+       }else if ((colors.contains(Constants.MID_TONE) || colors.contains(Constants.DARK) )
+               && budget.contains(Constants.HIGH) &&( elementsOfDesign.contains(Constants.DETAILED) || lines.contains(Constants.CURVED_LINES))) {
+       	  return CLASSIC;
+       }else if (elementsOfDesign.contains(Constants.SIMPLE) && budget.contains(Constants.AVERAGE)){
+       	  return Constants.MODERNIST;
+       }else if (elementsOfDesign.contains(Constants.DETAILED)|| elementsOfDesign.contains(Constants.MID_RANGE) && lines.contains(Constants.CURVED_WITH_STRAIGHT)  ){
+       	  return Constants.CLASSIC_MODERN;
+   	   }else if (budget.contains(Constants.AVERAGE) || elementsOfDesign.contains(Constants.SUPER_SIMPLE) || elementsOfDesign.contains(Constants.SIMPLE)) {
+   	   	  return Constants.MINIMALIST;
+   	   }else if (elementsOfDesign.contains(Constants.SIMPLE) && lines.contains(Constants.STRAIGHT_LINES)){
+   	   	 if(budget.contains(Constants.LOW) || budget.contains(Constants.HIGH) ){
+   	   	 	return Constants.MODERN_MINIMALIST;
+   	   	 }
+   	   	 return Constants.MODERNIST;
+   	   }else{
+           return Constants.CLASSIC;
+       }
 
 
+    }
 }

@@ -20,6 +20,7 @@ public class Question3 extends AppCompatActivity {
     private Button nextButton;
     private CheckBox lightCB , darkCB , midToneCB , vibrantCB;
     RelativeLayout rootLayout;
+    ArrayList<String> lines , elementsOfDesign;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,9 +33,12 @@ public class Question3 extends AppCompatActivity {
         rootLayout = findViewById(R.id.question3_root_layout);
         getSupportActionBar().setTitle("MyDesigner");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getIntent().getExtras()!=null){
+            lines = getIntent().getStringArrayListExtra(Constants.LINES);
+            elementsOfDesign = getIntent().getStringArrayListExtra(Constants.ELEMENTS_OF_DESIGN);
+        }
 
-        ArrayList<String> lines = getIntent().getStringArrayListExtra(Constants.LINES);
-        ArrayList<String> elementsOfDesign = getIntent().getStringArrayListExtra(Constants.ELEMENTS_OF_DESIGN);
+
 
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override

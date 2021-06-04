@@ -3,11 +3,14 @@ package com.example.kmeproject;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -18,6 +21,8 @@ public class Question4 extends AppCompatActivity {
     private Button getResultButton;
     private static final int LOW_BOUND = 6666;
     private static final int AVERAGE_BOUND = 13333;
+    private RelativeLayout relativeLayout;
+    ArrayList<String> lines , elementsOfDesign , colors;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,14 +31,18 @@ public class Question4 extends AppCompatActivity {
         seekBar = findViewById(R.id.seek_bar);
         seekBarCount = findViewById(R.id.seek_bar_text_view);
         getResultButton = findViewById(R.id.get_result);
+        relativeLayout = findViewById(R.id.question_4_layout);
         getSupportActionBar().setTitle("MyDesigner");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //get all the answers from the arrayList
+        if(getIntent().getExtras()!=null){
+            lines = getIntent().getStringArrayListExtra(Constants.LINES);
+            elementsOfDesign = getIntent().getStringArrayListExtra(Constants.ELEMENTS_OF_DESIGN);
+            colors = getIntent().getStringArrayListExtra(Constants.COLORS);
+        }
 
-        ArrayList<String> lines = getIntent().getStringArrayListExtra(Constants.LINES);
-        ArrayList<String> elementsOfDesign = getIntent().getStringArrayListExtra(Constants.ELEMENTS_OF_DESIGN);
-        ArrayList<String> colors = getIntent().getStringArrayListExtra(Constants.COLORS);
+
 
         getResultButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +50,10 @@ public class Question4 extends AppCompatActivity {
                 ArrayList<String> budget = getBudget();
                 //TODO add the logic for the inferance engine here
                 // example of the function call
-//                String designResult = InferanceEngine.getCategory(lines , elementsOfDesign , colors , budget);
+                String designResult = InferanceEngine.getCategory(lines , elementsOfDesign , colors , budget);
+                Snackbar snackbar = Snackbar
+                        .make(relativeLayout, designResult, Snackbar.LENGTH_LONG);
+                snackbar.show();
             }
         });
 

@@ -19,6 +19,7 @@ public class Question2 extends AppCompatActivity {
     private RelativeLayout rootLayout;
     Button nextButton;
     CheckBox simpleCB , superSimpleCB , midRangeCB , detailedCB;
+    ArrayList<String> lines;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +33,10 @@ public class Question2 extends AppCompatActivity {
         getSupportActionBar().setTitle("MyDesigner");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // get the data from the last question
-        ArrayList<String> lines = getIntent().getExtras().getStringArrayList(Constants.LINES);
-
+        lines = new ArrayList<>();
+        if(getIntent().getExtras()!=null) {
+             lines = getIntent().getExtras().getStringArrayList(Constants.LINES);
+        }
         nextButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
