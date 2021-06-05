@@ -2,7 +2,8 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/question_4_layout">
+    android:id="@+id/question_4_layout"
+    android:background="#FFFFFF">
     <TextView
         android:id="@+id/question_4_text_view"
         android:layout_width="wrap_content"
@@ -14,7 +15,6 @@
         android:padding="20dp"
         android:textStyle="bold"
         android:elevation="3dp"
-
         />
 
     <SeekBar
@@ -31,6 +31,7 @@
         android:thumbTint="@color/pink"
         android:progressTint="@color/pink"
         />
+
     <TextView
         android:id="@+id/seek_bar_text_view"
         android:layout_width="wrap_content"
@@ -40,6 +41,25 @@
         android:textStyle="bold"
         android:layout_margin="10dp"
 
+        />
+    <ImageView
+        android:id="@+id/question4_info"
+        android:layout_width="match_parent"
+        android:layout_below="@id/seek_bar"
+        android:layout_marginTop="50dp"
+        android:layout_height="200dp"
+        android:maxHeight="200dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/budget_info"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/question4_info"
+        android:padding="10dp"
+        android:drawablePadding="5dp"
+        android:textSize="15sp"
+android:drawableStart="@drawable/ic_group_2"
+        android:text="This chart might help you realize the prices to factor in."
         />
     <Button
         android:id="@+id/get_result"

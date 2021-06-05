@@ -48,8 +48,7 @@ public class Question4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ArrayList<String> budget = getBudget();
-                //TODO add the logic for the inferance engine here
-                // example of the function call
+
                 String designResult = InferanceEngine.getCategory(lines , elementsOfDesign , colors , budget);
                 Snackbar snackbar = Snackbar
                         .make(relativeLayout, designResult, Snackbar.LENGTH_LONG);
